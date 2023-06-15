@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.24)
 project(Snake_Game)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Snake_Game main.cpp juego.cpp vibora.cpp jugador.cpp juego.h jugador.h vibora.h)
+add_executable(Snake_Game main.cpp jugador.cpp vibora.cpp juego.cpp)

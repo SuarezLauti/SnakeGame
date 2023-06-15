@@ -3,6 +3,9 @@
 #include "vibora.h"
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib> // Agregado para la función srand y rand
+#include <ctime> // Agregado para la función time
+
 using namespace std;
 
 void Menu() {
@@ -20,6 +23,8 @@ void Titulo() {
 }
 
 int main() {
+    srand(time(NULL)); // Inicializar la semilla del generador de números aleatorios
+
     bool reintentar = false;
     string nombre;
     cout << "Bienvenido jugador, ingresa tu nombre: " << endl;
@@ -48,12 +53,17 @@ int main() {
         cin >> opcion;
         if (opcion == 1) {
             reintentar = true;
-            system("clear"); // Limpia la consola (para sistemas UNIX)
+            system("cls"); // Limpia la consola (para sistemas UNIX)
         } else if (opcion == 2) {
             reintentar = false;
         } else {
             cout << "Opcion invalida. Saliendo del juego." << endl;
             reintentar = false;
+        }
+
+        if (reintentar) {
+            juego A(15, 16);
+            A.Reiniciar();
         }
     } while (reintentar);
 

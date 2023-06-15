@@ -1,21 +1,29 @@
-#ifndef _juego_H_
-#define _juego_H_
-#include <string.h>
+#ifndef VIBORA_H
+#define VIBORA_H
+
+#include <vector>
+#include <utility>
+#include <iostream>
 #include "jugador.h"
-class vibora{
-protected:
+
+class vibora {
+private:
     int Cabeza_x;
     int Cabeza_y;
     char Direcion;
+    std::vector<std::pair<int, int>> Cuerpo;
+    int longitud;
 
 public:
-    vibora(char);
-    void setCabeza_x(int);
-    void setCabeza_y(int);
-    void setDirecion(char);
+    vibora(char f);
+    void setDirecion(char f);
     char getDirecion();
+    void setCabeza_x(int x);
+    void setCabeza_y(int z);
     int getCabeza_x();
     int getCabeza_y();
-    int obtenerDireccionCabeza(jugador);
+    void actualizarCuerpo();
+    int obtenerDireccionCabeza(jugador J);
 };
-#endif
+
+#endif // VIBORA_H
